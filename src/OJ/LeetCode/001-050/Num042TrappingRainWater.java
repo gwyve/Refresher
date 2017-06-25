@@ -1,0 +1,32 @@
+package OJ.LeetCode;
+
+/**
+ * Created by VE on 2017/6/22.
+ */
+public class Num042TrappingRainWater {
+    public int trap(int[] height) {
+        int left=0,right=height.length-1,leftMax=0,rightMax=0,ret=0;
+        while (left<=right){
+            if (height[left] <= height[right]){
+                if (height[left]>=leftMax)
+                    leftMax = height[left];
+                else
+                    ret += leftMax - height[left];
+                left ++;
+            }else {
+                if (height[right] >= rightMax)
+                    rightMax = height[right];
+                else
+                    ret += rightMax - height[right];
+                right--;
+            }
+        }
+        return ret;
+    }
+
+
+    public static void main(String[] args){
+        Num042TrappingRainWater obj = new Num042TrappingRainWater();
+        System.out.println(obj.trap(new int[]{0,1,0,2,1,0,1,3,2,1,2,1}));
+    }
+}
