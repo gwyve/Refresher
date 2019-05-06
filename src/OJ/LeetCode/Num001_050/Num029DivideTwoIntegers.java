@@ -3,7 +3,7 @@ package OJ.LeetCode.Num001_050;
 public class Num029DivideTwoIntegers {
 
     //这个题，需要注意：
-    //  1、int界限的问题，一开始被我忽略了
+    //  1、int界限的问题，一开始被我忽略
     //  2、先把int转成long，否则好多麻烦
     //  3、一开始，我是一个一个加，速度太慢，后面就是2，4，8，16...这样的速度相加，速度快了很多
     public int divide(int dividend, int divisor) {
