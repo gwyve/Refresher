@@ -3,7 +3,7 @@ package OJ.LeetCode.Num001_050;
 public class Num010RegularExpressionMatching {
 
     public boolean isMatch(String s, String p) {
-        //  如果是* 则需要看两步之前的匹配度
+        //  如果是* 则需要看两步之前的匹配情况
 
         if (s == null || p == null)
             return false;
