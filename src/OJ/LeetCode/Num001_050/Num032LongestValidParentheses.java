@@ -17,10 +17,12 @@ public class Num032LongestValidParentheses {
                         s.charAt(i-(1+dp[i-1]))=='(')
                 {
                     dp[i]=dp[i-1]+2;
+                    // 以下内容是用来判断当前添加左侧‘（’，之前的子字符串的长度。如果两个都是最佳则连起来。
                     if (i-dp[i] > 0)
                         dp[i]+=dp[i-dp[i]];
                 }
             }
+            // 每次都更新最大子字符串长度
             res = res>dp[i] ? res:dp[i];
         }
         return res;
