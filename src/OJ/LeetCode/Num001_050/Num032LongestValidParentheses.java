@@ -4,6 +4,30 @@ import java.util.Stack;
 
 public class Num032LongestValidParentheses {
 
+
+    public int longestValidParenthesesDP(String s){
+        // 这个的规律，只是感觉根据子字符串的长度，找到对称的那块内容的。
+        int res = 0;
+        int[] dp = new int[s.length()];
+        for (int i = 1; i <s.length() ; i++) {
+            if(s.charAt(i)==')')
+            {
+                if(i-1>=0 && i-(1+dp[i-1]) >=0 &&
+                        // 这个是重点
+                        s.charAt(i-(1+dp[i-1]))=='(')
+                {
+                    dp[i]=dp[i-1]+2;
+                    if (i-dp[i] > 0)
+                        dp[i]+=dp[i-dp[i]];
+                }
+            }
+            res = res>dp[i] ? res:dp[i];
+        }
+        return res;
+    }
+
+
+
     public int longestValidParentheses(String s) {
         int res = 0;
         int start = 0;
@@ -34,6 +58,6 @@ public class Num032LongestValidParentheses {
 
     public static void main(String[] args){
         Num032LongestValidParentheses obj = new Num032LongestValidParentheses();
-        System.out.println(obj.longestValidParentheses("()(())"));
+        System.out.println(obj.longestValidParenthesesDP("())"));
     }
 }
