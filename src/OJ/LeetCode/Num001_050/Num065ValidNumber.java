@@ -4,6 +4,8 @@ import javax.xml.parsers.FactoryConfigurationError;
 
 public class Num065ValidNumber {
     public boolean isNumber(String s){
+        // 这个第一次用转移矩阵做题，用状态机的方法；
+        // 这个里面需要注意的合并很多个状态，这个是重点
         int[][] trans =  new int[][]{
                 {-1, 0, 1, 2, 3,-1},
                 {-1,-1,-1, 2, 3,-1},
