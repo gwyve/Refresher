@@ -1,4 +1,4 @@
-package OJ.LeetCode.Num001_050;
+package OJ.LeetCode.Num051_100;
 
 public class Num072EditDistance {
 

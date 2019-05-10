@@ -1,6 +1,4 @@
-package OJ.LeetCode.Num001_050;
-
-import javax.xml.parsers.FactoryConfigurationError;
+package OJ.LeetCode.Num051_100;
 
 public class Num065ValidNumber {
     public boolean isNumber(String s){

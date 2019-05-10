@@ -1,4 +1,4 @@
-package OJ.LeetCode.Num001_050;
+package OJ.LeetCode.Num051_100;
 
 import java.util.ArrayList;
 import java.util.List;
