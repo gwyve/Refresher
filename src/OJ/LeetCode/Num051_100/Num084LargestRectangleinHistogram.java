@@ -1,8 +1,38 @@
 package OJ.LeetCode.Num051_100;
 
+import java.util.Stack;
+
 public class Num084LargestRectangleinHistogram {
 
+    public int largestRectangleArea2(int[] heights){
 
+        // 这个是利用栈来计算的
+        // 使用栈在于维护一个递增栈，如果当前数小弹出顶部
+
+        // 这个方法特别需要注意，如果是个全部都是增的height，那么res永远都是0了，在结尾添加一个0就可以了。
+        int[] newHeights = new int[heights.length+1];
+        for (int i = 0; i < heights.length; i++) {
+            newHeights[i] = heights[i];
+        }
+        newHeights[heights.length] = 0;
+        heights = newHeights;
+
+
+        int res = 0;
+        Stack<Integer> stack = new Stack<Integer>();
+        for (int i = 0; i < heights.length; i++) {
+            if (stack.empty() || heights[stack.peek()]<heights[i]){
+                stack.push(i);
+            }else {
+                int cur = stack.pop();
+                int length = stack.empty()?i:(i - stack.peek() - 1);
+                if (heights[cur]*length > res)
+                    res = heights[cur]*length;
+                i--;
+            }
+        }
+        return res;
+    }
 
 
     public int largestRectangleArea1(int[] heights){
@@ -56,6 +86,6 @@ public class Num084LargestRectangleinHistogram {
 
     public static void main(String[] args){
         Num084LargestRectangleinHistogram obj = new Num084LargestRectangleinHistogram();
-        System.out.println(obj.largestRectangleArea1(new int[]{2, 1, 5, 6, 2, 3}));
+        System.out.println(obj.largestRectangleArea2(new int[]{2,2}));
     }
 }
