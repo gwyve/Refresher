@@ -7,7 +7,7 @@ public class Num087ScrambleString {
             return false;
         if (s1.equals(s2))
             return true;
-        //
+        // 如果只需要判断字母内容，而不用判断字母顺序就可以用这个map的方法
         int[] map = new int[26];
         for (int i = 0; i < s1.length(); i++) {
             map[s1.charAt(i)-'a'] ++;
