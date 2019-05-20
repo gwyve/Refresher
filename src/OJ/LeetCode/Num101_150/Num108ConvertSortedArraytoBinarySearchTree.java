@@ -30,7 +30,7 @@ public class Num108ConvertSortedArraytoBinarySearchTree {
 
     }
 
-    public class TreeNode{
+    private class TreeNode{
         int val;
         TreeNode left;
         TreeNode right;
