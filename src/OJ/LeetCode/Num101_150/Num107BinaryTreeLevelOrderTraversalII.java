@@ -4,7 +4,7 @@ import java.util.*;
 
 public class Num107BinaryTreeLevelOrderTraversalII {
 
-    public class TreeNode{
+    private class TreeNode{
         int val;
         TreeNode left;
         TreeNode right;
