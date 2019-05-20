@@ -7,7 +7,7 @@ import java.util.List;
  * Created by yixina-z on 18/2/18.
  */
 public class Num102BinaryTreeLevelOrderTraversal {
-    public class TreeNode{
+    private class TreeNode{
         int val;
         TreeNode left;
         TreeNode right;
