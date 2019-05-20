@@ -13,6 +13,7 @@ public class Num115DistinctSubsequences {
         for (int i = 1; i < t.length()+1; i++) {
             for (int j = 1; j < s.length()+1; j++) {
                 if (t.charAt(i-1)== s.charAt(j-1)){
+                    // 这个递推公式，我也没有想出为啥，主要是观察
                     dp[i][j] = dp[i][j-1] + dp[i-1][j-1];
                 }else {
                     dp[i][j] = dp[i][j-1];
