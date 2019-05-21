@@ -4,6 +4,25 @@ import java.util.LinkedList;
 import java.util.Queue;
 
 public class Num116PopulatingNextRightPointersinEachNode {
+    public Node connect1(Node root){
+        // 递归的方法
+        // 这个递归的方法快很多，这个是log级别的，queue的那个是n平方
+        if (root==null)
+            return null;
+        if (root.left!=null){
+            root.left.next = root.right;
+        }
+        if (root.right!=null){
+            // 这个位置没有想到，特殊结构next
+            root.right.next = root.next==null?null:root.next.left;
+        }
+        connect1(root.left);
+        connect1(root.right);
+        return root;
+    }
+
+
+
     public Node connect(Node root){
         // 这个是借助queue不递归的方式
         if (root == null)
