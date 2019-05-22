@@ -1,6 +1,19 @@
 package OJ.LeetCode.Num101_150;
 
 public class Num121BestTimetoBuyandSellStock {
+    public int maxProfitDP(int[] prices){
+        if (prices==null || prices.length==0)
+            return 0;
+        int[] dp = new int[prices.length];
+        int min = prices[0];
+        for (int i = 1; i < prices.length; i++) {
+            int cha = prices[i] - min;
+            dp[i] = cha>dp[i-1]?cha:dp[i-1];
+            min = min<prices[i]?min:prices[i];
+        }
+        return dp[prices.length-1];
+    }
+
     public int maxProfit(int[] prices) {
         // 最动脑子的方法，速度特别慢
         // 这个是需要扫面两边的n平方级别的
