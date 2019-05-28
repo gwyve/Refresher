@@ -20,6 +20,7 @@ public class Num132PalindromePartitioningII {
                 }
             }
         }
+        // 以下是第二个dp
         int[] count = new int[s.length()+1];
         for (int i = s.length()-1; i >= 0 ; i--) {
             count[i] = Integer.MAX_VALUE;
