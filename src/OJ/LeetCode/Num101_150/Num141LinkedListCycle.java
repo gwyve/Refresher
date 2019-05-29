@@ -20,7 +20,7 @@ public class Num141LinkedListCycle {
 
 
 
-    class ListNode {
+    private class ListNode {
         int val;
         ListNode next;
         ListNode(int x) {
