@@ -28,7 +28,7 @@ public class Num138CopyListwithRandomPointer {
         return tmp;
     }
 
-    class Node {
+    private class Node {
         public int val;
         public Node next;
         public Node random;
