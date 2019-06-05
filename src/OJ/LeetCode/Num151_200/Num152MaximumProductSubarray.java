@@ -1,6 +1,6 @@
 package OJ.LeetCode.Num151_200;
 
-public class Num152 {
+public class Num152MaximumProductSubarray {
 
     public int maxProductDP(int[] nums){
         // 这个地方因为有0和负数，需要维护两个数列
