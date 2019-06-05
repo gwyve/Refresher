@@ -1,7 +1,28 @@
 package OJ.LeetCode.Num151_200;
 
 public class Num153FindMinimuminRotatedSortedArray {
+    public int findMinLogN(int[] nums){
+        return helper(nums,0,nums.length-1);
+    }
+    public int helper(int[] nums,int low,int high){
+        // 如果子序列 从low到high都是递增的，那么直接返回
+        if (nums[low]<nums[high])
+            return nums[low];
+        if (high-low == 0){
+            return nums[low];
+        }else if (high-low == 1){
+            return nums[low]<nums[high]?nums[low]:nums[high];
+        }else {
+            int mid = (low+high)/2;
+            if (nums[low]<nums[mid]){
+                return helper(nums,mid,high);
+            }else {
+                return helper(nums,low,mid);
+            }
+        }
+    }
     public int findMin(int[] nums) {
+        // 这是个n的复杂度，垃圾也能ac
         if(nums== null || nums.length == 0){
             return -1;
         }
@@ -30,6 +51,6 @@ public class Num153FindMinimuminRotatedSortedArray {
 
     public static void main(String[] args){
         Num153FindMinimuminRotatedSortedArray obj = new Num153FindMinimuminRotatedSortedArray();
-        System.out.println(obj.findMin(new int[]{2,1}));
+        System.out.println(obj.findMinLogN(new int[]{1,2,3}));
     }
 }
