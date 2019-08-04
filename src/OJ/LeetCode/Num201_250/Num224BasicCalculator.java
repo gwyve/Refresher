@@ -14,6 +14,7 @@ public class Num224BasicCalculator {
                 while (i+1<s.length() && Character.isDigit(s.charAt(i+1))){
                     sum = sum * 10 + (s.charAt(i+1) - '0');
                     i++;
+
                 }
                 result += sum * sign;
             }else if (s.charAt(i) == '+'){
